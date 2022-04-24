@@ -1,0 +1,11 @@
+clear
+echo "XOA FOLDER CUA USER"
+read -p "Nhap so user can xoa folder:" n
+read -p "Nhap ten user can xoa folder:" name
+for i in `seq -w $n`
+do
+	rm -rf /home/kinhdoanh/$name$i
+	echo -n "- "
+done
+echo
+echo "Da xoa $n folder"

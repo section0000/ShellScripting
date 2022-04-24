@@ -1,0 +1,16 @@
+clear
+echo "TAO USER"
+read -p "Nhap ten file danh sach user: " file
+if [ -f $file ]; then
+	dem=0
+	for i in `cat $file`
+	do
+		userdel -f -r $i
+		echo -n "* "
+		dem=$[ $dem + 1]
+	done
+	echo "Da xoa thanh cong $dem user"
+	echo
+else
+	echo "$file khong ton tai"
+fi

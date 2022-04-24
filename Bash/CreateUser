@@ -1,0 +1,12 @@
+clear
+echo "TAO USER"
+read -p "Nhap so user can tao:" n
+read -p "Nhap ten user can tao:" name
+for i in `seq -w $n`
+do
+	useradd $name$i
+	echo 123456 | passwd --stdin $name$i > /dev/null
+	echo -n "+ "
+done
+echo
+echo "Da tao duoc $n user"

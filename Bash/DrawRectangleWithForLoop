@@ -1,0 +1,13 @@
+clear
+echo "In hinh chu nhat"
+read -p "Nhap chieu dai: " d
+read -p "Nhap chieu rong: " r
+for (( i = 0; i < $r; i++ ))
+do
+	for (( j = 0; j < $d; j++ ))
+	do
+		echo -n "* "
+	done
+	echo
+done
+

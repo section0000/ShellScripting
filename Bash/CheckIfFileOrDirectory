@@ -1,0 +1,13 @@
+clear
+read -p "nhap ten file hoac thu muc: " file
+if [ -d $file ] ; then
+	echo "thu muc $file dang ton tai, nhan phim bat ky de xem"
+	read -n 1 # 1: the number of keyboards to be pressed
+	ls -l $file
+elif [ -f $file ] ; then
+	echo "tap tin $file dang ton tai, nhan phim bat ky de xem"
+	read -n 1
+	more $file
+else
+	echo "$file khong ton tai"
+fi

@@ -1,0 +1,17 @@
+clear
+echo "In hinh chu nhat"
+read -p "Nhap chieu dai: " d
+read -p "Nhap chieu rong: " r
+i=0
+while [ $i -lt $r ]
+do
+	j=0
+	while [ $j -lt $d ]
+	do
+		echo -n "* "
+		j=$[ $j + 1 ]
+	done
+	i=$[ $i + 1 ]
+	echo
+done
+

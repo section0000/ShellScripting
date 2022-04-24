@@ -1,0 +1,18 @@
+clear
+echo "Kiem tra phan mem"
+read -p "Nhap ten phan mem can kiem tra: " pmem
+if [ -z `rpm -qa $pmem` ]; then
+	read -n 1 -p "$pmem chua cai, ban muon cai khong y/n?" key
+	if [ $key = "y" ] || [ $key = "Y" ]; then
+		dnf install $pmem
+	fi
+else
+	read -n 1 -p "$pmem da cai, ban muon chay (r) hay go bo(e) r/e/o?" key
+	if [ $key = "r" ] || [ $key = "R" ]; then
+		$pmem
+	elif [ $key = "e" ] || [ $key = "E" ]; then
+		dnf remove $pmem
+	else
+		echo -e "\n"
+	fi
+fi

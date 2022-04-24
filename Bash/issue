@@ -1,0 +1,7 @@
+clear
+echo " * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * "
+echo " LOP HOC LINUX LPI 1,2"
+echo " Hom nay ngay `date +%d` thang `date +%m` nam `date +%Y`"
+echo " Chao $USER, ban dang log in vao may $HOSTNAME"
+echo " IP: `ifconfig ens33 | grep netmask | awk '{print $2}'`"
+echo " * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * "

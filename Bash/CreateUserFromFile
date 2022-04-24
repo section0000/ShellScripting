@@ -1,0 +1,17 @@
+clear
+echo "TAO USER"
+read -p "Nhap ten file danh sach user: " file
+if [ -f $file ]; then
+	dem=0
+	for i in `cat $file`
+	do
+		useradd $i
+		echo 123456 | passwd --stdin $i > /dev/null
+		echo -n "* "
+		dem=`expr $dem + 1`
+	done
+	echo "Da tao duoc $dem user"
+	echo
+else
+	echo "$file khong ton tai"
+fi

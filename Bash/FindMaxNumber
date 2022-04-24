@@ -1,0 +1,11 @@
+clear
+read -p "Nhap so a: " a
+read -p "Nhap so b: " b
+read -p "Nhap so c: " c
+if [[ ($a -gt $b) && ($a -gt $c) ]]; then
+	echo "So lon nhat la: $a"
+elif [[ ($b -gt $a) && ($b -gt $c) ]]; then
+	echo "So lon nhat la: $b"
+else
+	echo "So lon nhat la: $c"
+fi

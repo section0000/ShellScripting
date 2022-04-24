@@ -1,0 +1,13 @@
+clear
+read -p "Nhap so a: " a
+read -p "Nhap so b: " b
+tong=`expr $a + $b`
+hieu=`expr $a - $b`
+tich=`expr $a \* $b`
+thuong=`expr $a / $b`
+sodu=`expr $a % $b`
+echo "Tong 2 so: $tong"
+echo "Hieu 2 so: $hieu"
+echo "Tich 2 so: $tich"
+echo "Thuong 2 so: $thuong"
+echo "So du: $sodu"

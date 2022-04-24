@@ -1,0 +1,16 @@
+clear
+fdisk /dev/sdc << EOF
+n
+e
+
+
+
+n
+
++400G
+n
+
+
+p
+w
+EOF

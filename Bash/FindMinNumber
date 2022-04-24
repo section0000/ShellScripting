@@ -1,0 +1,13 @@
+clear
+read -p " Nhap so a: " a
+read -p " Nhap so b: " b
+read -p " Nhap so c: " c
+min=$a
+if [ $b -lt $min ]; then
+        min=$b
+fi
+if [ $c -lt $min ]; then
+        min=$c
+fi
+
+echo "So nho nhat la: $min"

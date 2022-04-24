@@ -1,0 +1,82 @@
+#!/bin/bash
+# simple script menu
+function diskspace {
+	clear
+	df -k
+}
+
+function whoseon {
+	clear
+	who
+}
+
+function memusage {
+	clear
+	cat /proc/meminfo
+}
+
+function createUser {
+	clear
+	bash CreateUserFromFile
+}
+
+function deleteUser {
+	clear
+	bash DeleteUserFromFile
+}
+
+function showSystemInfo 
+{
+	clear 
+	echo "SYSTEM INFORMATION"
+	str=`cat /proc/cpuinfo | grep 'model name' | awk 'NR==1'`
+	echo "Processor: `echo '${str:13}'`"
+	echo "Number of Cores: `cat /proc/cpuinfo | grep 'model name' | wc -l`"
+	echo "Memory: `free -m | awk 'NR==2' | awk '{print $2}'`"
+	echo "Operation System: `cat /etc/redhat-release`"
+	echo "IP address: `ifconfig ens33 | grep netmask | awk '{print $2}'` "
+	echo "Hard disk: "
+}
+
+function menu {
+	clear
+	echo
+	echo -e "\t\t\tSys Admin Menu\n"
+	echo -e "\t1. Display disk space"
+	echo -e "\t2. Display logged on users"
+	echo -e "\t3. Display memory usage"
+	echo -e "\t4. Create user"
+	echo -e "\t5. Delete user"
+	echo -e "\t6. System Information"
+	echo -e "\t0. Exit program\n\n"
+	echo -en "\t\tEnter option: "
+	read -n 1 option
+}
+# su dung option -e, cho phep echo su dung ki tu 
+# dieu khien dac biet, vd \t kq: tab
+while [ 1 ]
+do
+	menu
+	case $option in
+	0)
+		break ;;
+	1)
+		diskspace ;;
+	2)
+		whoseon ;;
+	3)
+		memusage ;;
+	4)
+		createUser ;;
+	5)
+		deleteUser ;;
+	6)
+		showSystemInfo ;;
+	*)
+		clear
+		echo "Sorry, wrong selection";;
+	esac
+	echo -en "\n\n\t\t\tHit any key to continue"
+	read -n 1 line
+done
+clear

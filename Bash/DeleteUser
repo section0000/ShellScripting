@@ -1,0 +1,11 @@
+clear
+echo "XOA USER"
+read -p "Nhap so user can xoa:" n
+read -p "Nhap ten user can xoa:" name
+for i in `seq -w $n`
+do
+	userdel -f -r $name$i
+	echo -n "- "
+done
+echo
+echo "Da xoa $n user"

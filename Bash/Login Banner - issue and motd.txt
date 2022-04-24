@@ -1,0 +1,5 @@
+Show banner before logging in directly (non-GUI only):
+   /etc/issue
+
+Show banner after logging in via ssh:
+   /etc/motd
