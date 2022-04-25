@@ -30,7 +30,7 @@ function showSystemInfo
 	clear 
 	echo "SYSTEM INFORMATION"
 	str=`cat /proc/cpuinfo | grep 'model name' | awk 'NR==1'`
-	echo "Processor: `echo '${str:13}'`"
+	echo "Processor: `echo ${str:13}`" # Get substring from position 13 to the end
 	echo "Number of Cores: `cat /proc/cpuinfo | grep 'model name' | wc -l`"
 	echo "Memory: `free -m | awk 'NR==2' | awk '{print $2}'`"
 	echo "Operation System: `cat /etc/redhat-release`"
